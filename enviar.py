@@ -14,7 +14,8 @@ os.chdir(CARPETA)
 
 for root, dirs, files in os.walk("./"):  
     for dir in dirs:
-        if root == './' and files is not None:
+        if root == './' and len(files) is not 0:
+            print "mando archivos"
             s = bot.send_message(CANAL,"Archivos sueltos")
             ides.append(s.message_id)
             asigs["Archivos sueltos"]= s.message_id

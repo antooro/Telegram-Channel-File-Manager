@@ -15,7 +15,6 @@ os.chdir(CARPETA)
 for root, dirs, files in os.walk("./"):  
     for dir in dirs:
         if root == './' and len(files) is not 0:
-            print "mando archivos"
             s = bot.send_message(CANAL,"Archivos sueltos")
             ides.append(s.message_id)
             asigs["Archivos sueltos"]= s.message_id
@@ -23,7 +22,6 @@ for root, dirs, files in os.walk("./"):
                 kind = filetype.guess(root+n)
                 if kind is not None:
                     abcd = kind.mime.split("/")
-                    print abcd[0]
                     if abcd[0] == "video":
                         s = bot.send_video(CANAL,open(n,'rb'))
                         ides.append(s.message_id)
@@ -41,9 +39,12 @@ for root, dirs, files in os.walk("./"):
                         ides.append(s.message_id)
                 
         for root1,dirs1,files1 in os.walk(dir):
-            s = bot.send_message(CANAL,root1)
-            ides.append(s.message_id)
-            asigs[root1]= s.message_id
+            
+            if len(files1) is not 0:
+                s = bot.send_message(CANAL,root1.replace("\\"," "))
+                ides.append(s.message_id)
+                if "\\" not in root1:
+                    asigs[root1]= s.message_id
             for f3 in files1: 
                 root1 = '/'.join(root1.split('\\'))
                 a =("./"+ root1+"/"+f3)

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import requests
 import random
 import telebot
@@ -5,10 +7,11 @@ from telebot import types
 import os
 from config import *
 import filetype
+import urllib
 
 ides = []
 asigs = {}
-
+subcat = {}
 bot = telebot.TeleBot(BOT_APIKEY)
 os.chdir(CARPETA)
 
@@ -40,11 +43,14 @@ for root, dirs, files in os.walk("./"):
                 
         for root1,dirs1,files1 in os.walk(dir):
             
-            if len(files1) is not 0:
-                s = bot.send_message(CANAL,root1.replace("\\"," "))
+            if len(files1) is not 0 or len(dirs1) is not 0:
+                
+                s = bot.send_message(CANAL,(root1.replace("\\"," ")))
                 ides.append(s.message_id)
-                if "\\" not in root1:
-                    asigs[root1]= s.message_id
+                if '\\' not in root1:  
+                    asigs[root1.replace("\\"," ")]= s.message_id
+                else:
+                    subcat[''.join(root1.split('\\'))] = s.message_id
             for f3 in files1: 
                 root1 = '/'.join(root1.split('\\'))
                 a =("./"+ root1+"/"+f3)
@@ -69,15 +75,19 @@ for root, dirs, files in os.walk("./"):
 
 a=[]
 markup = types.InlineKeyboardMarkup()
-
 for key,value in asigs.iteritems():
-    a.append(types.InlineKeyboardButton(str(key) ,url=LINK_CANAL+"/"+str(value)))
-
-markup.row(*a)
-a = bot.send_message(CANAL," selecciona la asignatura", reply_markup=markup,parse_mode='Markdown')
+    markup.row(types.InlineKeyboardButton(str(key) ,url=LINK_CANAL+"/"+str(value)))
+    b = []
+    for n in subcat.keys():
+        if key in n:
+            b.append(types.InlineKeyboardButton(str(n.replace(key,'')) ,url=LINK_CANAL+"/"+str(subcat[n])))
+    if len(b)>0:
+        markup.row(*b)
+a = bot.send_message(CANAL,"MENU", reply_markup=markup,parse_mode='Markdown')
 ides.append(a.message_id)
 
 os.chdir('..')
-with open('ides.txt', 'w') as f:
+a = 'ides'+CANAL.replace('@','')+'.txt'
+with open(a, 'w') as f:
     for item in ides:
         f.write("%s\n" % item)

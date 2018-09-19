@@ -9,7 +9,8 @@ from config import *
 
 bot = telebot.TeleBot(BOT_APIKEY)
 import os
-with open('ides.txt', 'r') as f:
+fich =  'ides'+CANAL.replace('@','')+'.txt'
+with open(fich, 'r') as f:
     myNames = f.readlines()
     
 for n in myNames:

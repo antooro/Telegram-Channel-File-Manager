@@ -3,7 +3,7 @@ Modifica los datos necesarios en config.py
 
 API-KEY del bot
 @ del canal de telegram (EJEMPLO t.me/uno) @uno
-
+Carpeta que queremos ordenar y meter en el moodle
 
 Instalación
 ```

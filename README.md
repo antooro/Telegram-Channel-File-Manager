@@ -1,5 +1,6 @@
 # TelegramChannelDirectoriesCreator
 
+## Explicación del concepto
 A partir de un sistema de archivos como este...
 
 
@@ -14,7 +15,7 @@ Obtén un canal ordenado en telegram con botones.
 
 ![alt text](https://i.imgur.com/9ZF4DdE.png)
 
-
+## Como configurarlo 
 Modifica los datos necesarios en config.py
 
 API-KEY del bot

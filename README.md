@@ -15,6 +15,12 @@ Obtén un canal ordenado en telegram con botones.
 
 ![alt text](https://i.imgur.com/9ZF4DdE.png)
 
+
+
+Añadido sistema de archivos recientes, ideal para distinguir las novedades
+![alt text](https://i.imgur.com/9ZF4DdE.png)
+https://i.imgur.com/Gyq8Iiw.png
+
 ## Como configurarlo 
 Modifica los datos necesarios en config.py
 
@@ -43,6 +49,8 @@ python eliminar.py
 
 elimina los archivos enviados anteriormente, se usa para cuando quieres actualizar
 
+## TODO
 
+Formateo total del codigo, de momento es una solución temporal para un problema
 
 

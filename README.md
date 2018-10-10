@@ -26,11 +26,13 @@ Añadido sistema de archivos recientes, ideal para distinguir las novedades
 ## Como configurarlo 
 Modifica los datos necesarios en ```config.py```
 
--API-KEY del bot
--@ del canal de telegram (EJEMPLO t.me/uno) @uno
--Carpeta que queremos ordenar y meter en el canal
+- API-KEY del bot
 
-###Instalación
+- @ del canal de telegram (EJEMPLO t.me/uno) @uno
+
+- Carpeta que queremos ordenar y meter en el canal
+
+### Instalación
 ```
 pip install -r "requirements.txt"
 ```

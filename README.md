@@ -1,7 +1,16 @@
 # TelegramChannelDirectoriesCreator
 
 A partir de un sistema de archivos como este...
+
+
+
 ![alt text](https://i.imgur.com/3mN2j3u.png)
+
+
+
+Obtén un canal ordenado en telegram con botones.
+
+
 
 ![alt text](https://i.imgur.com/9ZF4DdE.png)
 

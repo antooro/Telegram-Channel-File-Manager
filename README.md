@@ -1,7 +1,9 @@
 # TelegramChannelDirectoriesCreator
 
+A partir de un sistema de archivos como este...
+![alt text](https://i.imgur.com/3mN2j3u.png)
 
-https://i.imgur.com/9ZF4DdE.png
+![alt text](https://i.imgur.com/9ZF4DdE.png)
 
 
 Modifica los datos necesarios en config.py

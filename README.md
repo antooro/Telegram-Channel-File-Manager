@@ -1,4 +1,9 @@
 # TelegramChannelDirectoriesCreator
+
+
+https://i.imgur.com/9ZF4DdE.png
+
+
 Modifica los datos necesarios en config.py
 
 API-KEY del bot

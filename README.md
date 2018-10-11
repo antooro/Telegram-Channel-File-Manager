@@ -1,4 +1,4 @@
-# TelegramChannelDirectoriesCreator
+# Telegram Channel File Manager-
 
 ## Explicación del concepto
 A partir de un sistema de archivos como este...

@@ -52,7 +52,7 @@ def envia(kind, n):
     else:
             s = bot.send_document(CANAL,open(n,'rb'))
             ides.append(s.message_id)
-            if n not in old and old: new[n] = s.message_id
+            if n not in old and old: new[cat] = s.message_id
 
 
 for root, dirs, files in os.walk("./"):

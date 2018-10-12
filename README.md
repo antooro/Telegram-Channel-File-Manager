@@ -55,6 +55,6 @@ elimina los archivos enviados anteriormente, se usa para cuando quieres actualiz
 
 ## TODO
 
-Formateo total del codigo, de momento es una solución temporal para un problema
+Sistema para poder añadir una capa de profundidad mas en los directorios
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 import requests
 import random
 import telebot
@@ -8,12 +8,15 @@ import os
 from config import *
 import filetype
 import urllib
+from future.utils import iteritems
+
 nuevos = 'log'+CANAL.replace('@','')+'.txt'   
 try:
     with open(nuevos, 'r') as f:
         old = f.read().split('\n')
 except:
     old = []
+
 
 
 new = {}
@@ -24,7 +27,6 @@ asigs = {}
 subcat = {}
 bot = telebot.TeleBot(BOT_APIKEY)
 os.chdir(CARPETA)
-d = 0
 
 def envia(kind, n):
     
@@ -60,9 +62,9 @@ for root, dirs, files in os.walk("./"):
     for dir in dirs:
         
         for root1,dirs1,files1 in os.walk(dir):
-            
+        
             if len(files1) is not 0 or len(dirs1) is not 0:
-                
+               
                 s = bot.send_message(CANAL,(root1.replace("\\"," ")))
                 ides.append(s.message_id)
                 
@@ -77,7 +79,6 @@ for root, dirs, files in os.walk("./"):
                 fich.append(f3)
                 envia(kind, a)
                 
-                
     if root == './' and len(files) is not 0 :
         s = bot.send_message(CANAL,"Archivos sueltos")
         ides.append(s.message_id)
@@ -91,7 +92,7 @@ a=[]
 
 
 markup = types.InlineKeyboardMarkup()
-for key,value in asigs.iteritems():
+for key,value in iteritems(asigs):
     markup.row(types.InlineKeyboardButton(str(key) ,url=LINK_CANAL+"/"+str(value)))
     b = []
     for n in subcat.keys():

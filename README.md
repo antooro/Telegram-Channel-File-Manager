@@ -46,7 +46,7 @@ USO
 python enviar.py
 ```
 
-envia los archivos y el menu final
+envia los archivos y el menu final **[![SOLO SI NO HAN PASADO 48 HORAS DESDE SU ENVIO](https://core.telegram.org/bots/api#deletemessage)]**
 
 ```
 python eliminar.py

@@ -1,4 +1,4 @@
-# Telegram Channel File Manager [![Python 3.6](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
+# Telegram Channel File Manager [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
 
 
 ## Explicación del concepto

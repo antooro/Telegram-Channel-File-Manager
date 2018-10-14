@@ -56,6 +56,6 @@ elimina los archivos enviados anteriormente, se usa para cuando quieres actualiz
 
 ## TODO
 
--Sistema para poder añadir una capa de profundidad mas en los directorios
--Compatibilidad con UTF-8 en py2.7
+- Sistema para poder añadir una capa de profundidad mas en los directorios
+- Compatibilidad con UTF-8 en py2.7
 

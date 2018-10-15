@@ -106,7 +106,7 @@ ides.append(a.message_id)
 if new:
     mensaje = '*Nuevos archivos*\n\n'
 
-    for archivo, mid in new.iteritems():
+    for archivo, mid in iteritems(new):
         mensaje += u"[{}]({}/{})".format(archivo,LINK_CANAL,mid)+"\n"
         
         

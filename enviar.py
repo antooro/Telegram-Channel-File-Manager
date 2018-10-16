@@ -29,12 +29,12 @@ bot = telebot.TeleBot(BOT_APIKEY)
 os.chdir(CARPETA)
 
 def envia(kind, n):
-    
+    name = n.split('/')
+    nombre = name[-1]
+    cat = n[2:].replace('/',' ')
+    abcd = kind.mime.split("/")
     if kind is not None:
-        name = n.split('/')
-        nombre = name[-1]
-        cat = n[2:].replace('/',' ')
-        abcd = kind.mime.split("/")
+        
         if abcd[0] == "video":
             s = bot.send_video(CANAL,open(n,'rb'))
             ides.append(s.message_id)

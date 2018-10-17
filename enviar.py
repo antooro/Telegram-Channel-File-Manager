@@ -110,7 +110,8 @@ if new:
         mensaje += u"[{}]({}/{})".format(archivo,LINK_CANAL,mid)+"\n"
         
         
-    bot.send_message(CANAL,mensaje,parse_mode='Markdown',disable_web_page_preview=True)
+    s = bot.send_message(CANAL,mensaje,parse_mode='Markdown',disable_web_page_preview=True)
+    ides.append(s.message_id)
 
 
 os.chdir('..')

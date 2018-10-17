@@ -32,8 +32,8 @@ def envia(kind, n):
     name = n.split('/')
     nombre = name[-1]
     cat = n[2:].replace('/',' ')
-    
     if kind is not None:
+        
         abcd = kind.mime.split("/")
         if abcd[0] == "video":
             s = bot.send_video(CANAL,open(n,'rb'))
@@ -54,7 +54,7 @@ def envia(kind, n):
     else:
             s = bot.send_document(CANAL,open(n,'rb'))
             ides.append(s.message_id)
-            if n not in old and old: new[cat] = s.message_id
+            if nombre not in old and old: new[cat] = s.message_id
 
 
 for root, dirs, files in os.walk("./"):
@@ -110,7 +110,7 @@ if new:
         mensaje += u"[{}]({}/{})".format(archivo,LINK_CANAL,mid)+"\n"
         
         
-    s = bot.send_message(CANAL,mensaje,parse_mode='Markdown',disable_web_page_preview=True)
+    bot.send_message(CANAL,mensaje,parse_mode='Markdown',disable_web_page_preview=True)
     ides.append(s.message_id)
 
 
